@@ -58,13 +58,5 @@ class Teste:
 
             Id.add_edge(Spartial, 0)
             Spartial.add_edge(R, i)
-
-        t0 = time.time()
-        print __name__
-		
-        if __name__ == 'trabalho':
-            sched.start()
-
-        t1 = time.time()
-
-        print "Execution time %.3f" %(t1-t0)
+            
+        return sched
