@@ -3,13 +3,6 @@ import copy
 import LinearAlgebraPurePython as la
 import numpy as np
 
-A = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
-Det = la.determinant_fast(A)
-npDet = np.linalg.det(A)
-print("Determinant of A is", round(Det,9)+0)
-print("The Numpy Determinant of A is", round(npDet,9))
-print()
-
 def determinant_fast(A):
     # Section 1: Establish n parameter and copy A
     n = len(A)
@@ -33,3 +26,10 @@ def determinant_fast(A):
     for i in range(n):
         # ... product of diagonals is determinant
         product *= AM[i][i]
+
+if __name__ == '__main__':
+    A = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+    Det = la.determinant_fast(A)
+    npDet = np.linalg.det(A)
+    print("Determinant of A is", round(Det,9)+0)
+    print("The Numpy Determinant of A is", round(npDet,9))
