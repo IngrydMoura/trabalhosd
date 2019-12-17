@@ -27,27 +27,26 @@ class TaggedValue:
 
 
 class Source(Node): #source class
+	def __init__(self, it):
+		self.it = it
+		self.inport = []
+		self.dsts = []
+		self.tagcounter = 0
 
-        def __init__(self, it):
-                self.it = it
-                self.inport = []
-                self.dsts = []
-                self.tagcounter = 0
+	self.affinity = None
 
-		self.affinity = None
+	def run(self, args, workerid, operq):
+			for line in self.it:
+				result = self.f(line, args)
 
-        def run(self, args, workerid, operq):
-                for line in self.it:
-			result = self.f(line, args)
-
-			tag = self.tagcounter
-                        opers = self.create_oper(TaggedValue(result, tag), workerid, operq)
-                        for oper in opers:
-                                oper.request_task = False
-                        self.sendops(opers, operq)
-			self.tagcounter += 1
-                opers = [Oper(workerid, None, None, None)] #sinalize eof and request a task
-                self.sendops(opers, operq)
+		tag = self.tagcounter
+					opers = self.create_oper(TaggedValue(result, tag), workerid, operq)
+					for oper in opers:
+							oper.request_task = False
+					self.sendops(opers, operq)
+		self.tagcounter += 1
+			opers = [Oper(workerid, None, None, None)] #sinalize eof and request a task
+			self.sendops(opers, operq)
 
 	def f(self, line, args):
 		#default source operation

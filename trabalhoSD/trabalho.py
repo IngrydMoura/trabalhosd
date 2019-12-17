@@ -2,16 +2,13 @@ import sys, os
 import time
 
 sys.path.append(os.environ['PYDFHOME'])
+f = lambda x: 1/(1+x**2)
+
 from pyDF import *
 
+
 class Teste:
-	# def __init__(self):
-	# 	self.psum = psum
-	# 	self.sum_total = sum_total
-	# 	self.main = main
-
-
-
+    
     def psum(self,args):
         stride, my_id, nprocs = args[0]
         print (stride, my_id, nprocs)

@@ -1,7 +1,6 @@
 import xmlrpclib
 
 s = xmlrpclib.ServerProxy('http://localhost:8000')
-print s.main()  # Returns 2**3 = 8
+time = s.main()
 
-# Print list of available methods
-print s.system.listMethods()
+print "Execution time %.3f" %time
