@@ -34,8 +34,6 @@ class Teste:
         print "Reduction: %f" %pi
 
     def main(self):
-    	f = lambda x: 1/(1+x**2)
-
         nprocs = int(2)
         stride = float(0.01)
 

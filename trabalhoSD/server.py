@@ -2,7 +2,7 @@ from SimpleXMLRPCServer import SimpleXMLRPCServer
 from SimpleXMLRPCServer import SimpleXMLRPCRequestHandler
 
 from multiprocessing import Process, freeze_support
-from trabalho import Teste
+from det import Teste
 import time
 
 PORT = 8000
