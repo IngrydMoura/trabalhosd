@@ -1,12 +1,13 @@
 import copy
 import time
+import numpy as np
 
 import sys, os
 sys.path.append(os.environ['PYDFHOME'])
 
 from pyDF import *
 
-A = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+A = np.random.randint(0, 100,size=(100,100))
 n = len(A)
 
 class Teste:
