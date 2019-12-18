@@ -51,7 +51,7 @@ class Teste:
 
     def main(self):
 
-        nprocs = int(2)
+        nprocs = int(5)
         stride = float(1)
 
         graph = DFGraph()
