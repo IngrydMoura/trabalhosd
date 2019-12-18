@@ -38,19 +38,20 @@ class Teste:
 
 
     def det_total(self,args):
-        # product = 1.0
-        # print "Partials %s" %args
-        # for partial in args:
-        #     obj = args[partial]
-        #     for hue in obj
-        #         product *= float(obj[hue][hue])
-        # product = round(product,9)+0
-        # print "Reduction: %f" %product
+        product = 1.0
+        print "Partials %s" %args
+        for partial in args:
+            obj = partial
+            for hue in range(0, len(obj)):
+                print "%f" %obj[hue][hue]
+                product *= float(obj[hue][hue])
+        product = round(product,9)+0
+        print "Reduction: %f" %product
 
     def main(self):
 
         nprocs = int(2)
-        stride = float(2)
+        stride = float(1)
 
         graph = DFGraph()
         sched = Scheduler(graph, nprocs, mpi_enabled = False)
