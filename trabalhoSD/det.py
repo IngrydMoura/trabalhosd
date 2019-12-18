@@ -7,7 +7,7 @@ sys.path.append(os.environ['PYDFHOME'])
 
 from pyDF import *
 
-A = np.random.randint(0, 100,size=(100,100))
+A = np.random.randint(-1000, 1000,size=(100,100))
 n = len(A)
 
 class Teste:
